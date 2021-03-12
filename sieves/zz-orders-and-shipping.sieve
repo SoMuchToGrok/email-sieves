@@ -14,7 +14,8 @@ if header :contains "subject" ["shipping", "shipped", "delivered", "delivery"]
 }
 
 # More targeted for catching general communication and updates. Delete after 180 days.
-elsif address :domain "from" ["ups.com", "upsemail.com", "usps.com", "fedex.com", "narvar.com", "etsy.com", "amazon.com", "newegg.com", "rei.com"]
+elsif address :matches :domain "from" ["*ups.com", "*upsemail.com", "*usps.com", "*fedex.com", "*narvar.com", 
+"*etsy.com", "*amazon.com", "*newegg.com", "*rei.com", "*target.com"]
 {
     fileinto "Orders & Shipping"; 
     expire "day" "180";

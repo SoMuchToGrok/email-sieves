@@ -8,7 +8,7 @@ if header :contains "subject" ["appointment"]
 }
 
 # More targeted
-elsif address :domain "from" ["seatme.com", "opentable.com", "resy.com"]
+elsif address :matches :domain "from" ["*seatme.com", "*opentable.com", "*resy.com"]
 {
     fileinto "Reservations";
     stop; 

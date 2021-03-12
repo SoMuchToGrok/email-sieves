@@ -8,7 +8,8 @@ if header :contains "subject" ["security alert", "new login", "email address cha
 }
 
 # Commonly used security services
-elsif address :domain "from" ["lastpass.com", "okta.com", "accounts.google.com", "1password.com", "haveibeenpwned.com", "nextdns.io"]
+elsif address :matches :domain "from" ["*lastpass.com", "*logme.in", "*okta.com", "*accounts.google.com", 
+"*1password.com", "*haveibeenpwned.com", "*nextdns.io"]
 {
     fileinto "Security"; 
     stop;
