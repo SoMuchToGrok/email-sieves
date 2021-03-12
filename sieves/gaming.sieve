@@ -1,4 +1,4 @@
-require ["fileinto", "imap4flags", "regex"];
+require ["fileinto", "imap4flags"];
 
 # Commonly used gaming services
 if address :matches :domain "from" ["*steampowered.com", "*xbox.com", "*nintendo.net", "*nintendo.com", "*greenmangaming.com", 

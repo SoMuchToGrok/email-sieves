@@ -1,4 +1,4 @@
-require ["fileinto", "imap4flags", "regex"];
+require ["fileinto", "imap4flags"];
 
 # Commonly used travel services
 if address :matches :domain "from" ["*southwest.com", "*hyatt.com", "*airbnb.com", 

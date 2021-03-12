@@ -1,4 +1,4 @@
-require ["fileinto", "imap4flags", "regex"];
+require ["fileinto", "imap4flags"];
 
 # Common subjects relevant to security
 if header :contains "subject" ["security alert", "new login", "email address change"] 

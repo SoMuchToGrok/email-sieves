@@ -1,4 +1,4 @@
-require ["fileinto", "imap4flags", "regex"];
+require ["fileinto", "imap4flags"];
 
 # General catch all
 if header :contains "subject" ["appointment"] 
