@@ -1,7 +1,7 @@
 require ["fileinto", "imap4flags"];
 
-# Commonly used social networks
-if address :domain "from" ["highkey.com", "highkeysnacks.com", "doordash.com", "instacart.com", "papajohns.com"]
+# Commonly used food vendors
+if address :domain "from" ["highkey.com", "highkeysnacks.com", "doordash.com", "instacart.com", "papajohns.com", "yelp.com"]
 {
     fileinto "Food";
     stop;

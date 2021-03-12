@@ -5,3 +5,5 @@ if exists "list-unsubscribe"
 {
     addflag "\\Flagged-Ads";
 }
+
+# don't stop executing, allow other sieves to continue processing
