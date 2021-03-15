@@ -1,7 +1,8 @@
 require ["fileinto", "imap4flags"];
 
-# Common subjects relevant to security
-if header :contains "subject" ["security alert", "new login", "email address change"] 
+# Common subjects relevant to security events
+if header :contains "subject" ["security alert", "security notification", "login", "sign-on", 
+"sign-in", "email address", "email change", "password", "terms of service"] 
 {
     fileinto "Security";
     stop;

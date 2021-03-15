@@ -1,9 +1,15 @@
 require ["fileinto", "imap4flags"];
 
-# If "list-unsubscribe" header present, flag for manual review
-if exists "list-unsubscribe"
+# allowlist - do NOT tag as advertising
+if address :matches :domain "from" ["*personalcapital.com", "*robinhood.com"]
 {
-    addflag "\\Flagged-Ads";
+    # do nothing
 }
 
-# don't stop executing, allow other sieves to continue processing
+# If "list-unsubscribe" header present, flag for easy manual review
+elsif exists "list-unsubscribe"
+{
+    fileinto "Ads";
+}
+
+# do NOT stop executing, allow other sieves to continue processing
