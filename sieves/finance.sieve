@@ -1,6 +1,5 @@
 require ["fileinto", "imap4flags", "vnd.proton.expire"];
 
-
 # Delete after 30 days (no need to retain routine update emails)
 if address :matches :domain "from" ["*personalcapital.com", "*nerdwallet.com", "*experian.com", "*equifax.com"]
 {

@@ -7,6 +7,7 @@ if address :matches :domain "from" ["*personalcapital.com", "*robinhood.com"]
 }
 
 # If "list-unsubscribe" header present, flag for easy manual review
+# Ads is a label, NOT a folder
 elsif exists "list-unsubscribe"
 {
     fileinto "Ads";

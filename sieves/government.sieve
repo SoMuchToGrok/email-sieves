@@ -1,5 +1,8 @@
 require ["fileinto", "imap4flags"];
 
+# Don't expire any emails here.
+
+# Handle the national parks service
 if address :matches :domain "from" ["*recreation.gov"]
 {
     fileinto "Hiking";

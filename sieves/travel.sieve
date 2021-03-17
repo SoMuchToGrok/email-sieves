@@ -1,4 +1,4 @@
-require ["fileinto", "imap4flags"];
+require ["fileinto", "imap4flags", "vnd.proton.expire"];
 
 # Commonly used travel services
 if address :matches :domain "from" ["*southwest.com", "*hyatt.com", "*airbnb.com", 
@@ -7,5 +7,6 @@ if address :matches :domain "from" ["*southwest.com", "*hyatt.com", "*airbnb.com
 "*marriott.com", "*tripadvisor.com", "*aa.com", "*autoslash.com", "*priceline.com"]
 {
     fileinto "Travel";
+    expire "day" "730";
     stop; 
 }
