@@ -10,7 +10,7 @@ Contributions are accepted.
 ## Design Philosophy
 
 - When in doubt, default to expiring emails. Few things truly need to be kept indefinitely.
-  - As of 03-18-2021, ProtonMail supports a maximum expiration of 120 days. Setting a value greater than 120 days will be silently accepted with no server side errors, defaulting to the max of 120 days. Keep this in mind.
+  - As of 03-18-2021, ProtonMail supports an undocumented maximum expiration of 120 days. Setting a value greater than 120 days will be silently accepted with no server side errors, defaulting to the max of 120 days. Keep this in mind.
   - Avoid using a global expiration rule with an "opt-in" model for retention. Emails are too unpredictable - it's a delicate balance.
   - Biannual offsite backups should address what concerns may arise from this strategy.
 - Scheduled/routine emails of importance (example - daily finance updates) should route to the main inbox, but expire quickly.
@@ -20,6 +20,7 @@ Contributions are accepted.
 - Think carefully about the execution chain. Use stops when warranted.
 - Use subject header parsing with caution, but don't be afraid. It's an immensely powerful routing mechanism.
 - IMAP uses [modified UTF-7](https://tools.ietf.org/html/rfc5228#section-2.1). Ensure folder and label names are in the [US-ASCII](https://www.charset.org/charsets/us-ascii) range.
+- You can only test so much before going to "prod". Ensure sieves handling ~critical emails explicitly check for _and_ resolve unintended states, such as expirations.
 
 ## Useful Links
 
@@ -32,9 +33,9 @@ Contributions are accepted.
 ## Testing
 
 - [Web app for testing sieves](https://www.fastmail.com/cgi-bin/sievetest.pl)
-  - NOTE - ensure NO personaly identifiable information is pasted into this tool
-  - Pro Tip - this tool is not aware of the "vnd.proton.expire" dependency. Remove it when testing with this tool.
-- When adding the sieve to ProtonMail, basic linting is performed server-side
+  - NOTE - ensure NO personaly identifiable information is pasted into this tool.
+  - Pro Tip - this app is not aware of the "vnd.proton.expire" package. Remove it when testing with this app.
+- When adding the sieve to ProtonMail, basic linting is performed server-side.
 
 ## Deployment
 
