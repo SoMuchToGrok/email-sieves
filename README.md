@@ -9,8 +9,9 @@ Contributions are accepted.
 
 ## Design Philosophy
 
-- Default to expiring emails. Few things truly need to be kept indefinitely.
+- When in doubt, default to expiring emails. Few things truly need to be kept indefinitely.
   - As of 03-18-2021, ProtonMail supports a maximum expiration of 120 days. Setting a value greater than 120 days will be silently accepted with no server side errors, defaulting to the max of 120 days. Keep this in mind.
+  - Avoid using a global expiration rule with an "opt-in" model for retention. Emails are too unpredictable - it's a delicate balance.
   - Biannual offsite backups should address what concerns may arise from this strategy.
 - Scheduled/routine emails of importance (example - daily finance updates) should route to the main inbox, but expire quickly.
 - Keep it simple and avoid having too many folders and labels.
@@ -18,12 +19,15 @@ Contributions are accepted.
 - No organizatonal system will ever be perfect. Expect _and_ accept occasional inefficiencies.
 - Think carefully about the execution chain. Use stops when warranted.
 - Use subject header parsing with caution, but don't be afraid. It's an immensely powerful routing mechanism.
+- IMAP uses [modified UTF-7](https://tools.ietf.org/html/rfc5228#section-2.1). Ensure folder and label names are in the [US-ASCII](https://www.charset.org/charsets/us-ascii) range.
 
 ## Useful Links
 
 - [ProtonMail Sieve Docs](https://protonmail.com/support/knowledge-base/sieve-advanced-custom-filters/)
 - [Sieve Tutorial](https://p5r.uk/blog/2011/sieve-tutorial.html)
 - [Official Sieve Wiki](http://sieve.info/)
+- [Sieve Language RFC](https://tools.ietf.org/html/rfc5228)
+- [IMAP RFC](https://tools.ietf.org/html/rfc3501)
 
 ## Testing
 

@@ -1,6 +1,7 @@
 require ["fileinto", "imap4flags", "vnd.proton.expire"];
 
 # For Robinhood Snacks
+# Route to main inbox
 if header :contains "from" "Robinhood Snacks"
 {
     expire "day" "3";

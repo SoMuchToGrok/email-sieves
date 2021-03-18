@@ -1,7 +1,7 @@
 require ["fileinto", "imap4flags"];
 
 # allowlist - do NOT tag as advertising
-if address :matches :domain "from" ["*personalcapital.com", "*robinhood.com"]
+if address :matches :domain "from" ["*personalcapital.com", "*robinhood.com", "*nerdwallet.com"]
 {
     # do nothing
 }
