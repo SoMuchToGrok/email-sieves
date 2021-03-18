@@ -1,4 +1,4 @@
-require ["fileinto", "imap4flags", "vnd.proton.expire", "regex"];
+require ["fileinto", "imap4flags", "vnd.proton.expire"];
 
 # General catch all for delivery events. 
 # Delete after 180 days, as this info can almost always be retrieved from the source of truth

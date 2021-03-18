@@ -10,6 +10,7 @@ Contributions are accepted.
 ## Design Philosophy
 
 - Default to expiring emails. Few things truly need to be kept indefinitely.
+  - As of 03-18-2021, ProtonMail supports a maximum expiration of 120 days. Setting a value greater than 120 days will be silently accepted with no server side errors, defaulting to the max of 120 days. Keep this in mind.
   - Biannual offsite backups should address what concerns may arise from this strategy.
 - Scheduled/routine emails of importance (example - daily finance updates) should route to the main inbox, but expire quickly.
 - Keep it simple and avoid having too many folders and labels.
