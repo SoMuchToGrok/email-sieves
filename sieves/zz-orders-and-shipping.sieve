@@ -15,7 +15,7 @@ if header :contains "subject" ["shipping", "shipped", "delivered", "delivery"]
 
 # General catch all for orders.
 # Do not expire, as these emails might be historically significant.
-if header :contains "subject" ["order", "invoice"] 
+if header :contains "subject" ["order", "invoice", "receipt"]
 {
     # This is purely extra protection in the event the sieves don't work as expected
     if hasexpiration
